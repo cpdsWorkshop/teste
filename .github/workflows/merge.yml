@@ -20,7 +20,7 @@ jobs:
 
       - name: Update index.html
         run: |
-         echo "<a href='${{ github.ref }}/mygame/main.html'>${{ github.ref }}</a>" >> index.html
+          sed -i "/<\/body>/i <a href='${{ github.ref }}/mygame/main.html'>${{ github.ref }}</a>" index.html
 
       - name: Commit and push changes
         run: |
